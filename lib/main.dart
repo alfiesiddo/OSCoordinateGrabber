@@ -80,12 +80,12 @@ class _LocationToGridState extends State<LocationToGrid> {
       if (p == LocationPermission.denied) {
         p = await Geolocator.requestPermission();
         if (p == LocationPermission.denied) {
-          setState(() => result = "❌ Permission denied");
+          setState(() => result = "Permission denied");
           return;
         }
       }
       if (p == LocationPermission.deniedForever) {
-        setState(() => result = "❌ Permission permanently denied");
+        setState(() => result = "Permission permanently denied");
         return;
       }
 
@@ -96,7 +96,7 @@ class _LocationToGridState extends State<LocationToGrid> {
         result = "${toSixFigure(osRef)}";
       });
     } catch (e) {
-      setState(() => result = "⚠️ Error: $e");
+      setState(() => result = "Error: $e");
     }
   }
 
